@@ -34,7 +34,7 @@ let books = [
   },
 ];
 
-function Lend_Book(title, borrower, date) {
+export function Lend_Book(title, borrower, date) {
   for (let i = 0; i < books.length; i++) {
     if (books[i].title == title) {
       books[i].borrower = borrower;
@@ -44,7 +44,7 @@ function Lend_Book(title, borrower, date) {
   }
 }
 
-function View_Borrowed_Books(borrower) {
+export function View_Borrowed_Books(borrower) {
   for (let i = 0; i < users[borrower].borrowedBooks.length; i++) {
     console.log(users[borrower].borrowedBooks[i].title);
     console.log(users[borrower].borrowedBooks[i].author);
@@ -54,7 +54,7 @@ function View_Borrowed_Books(borrower) {
   }
 }
 
-function User_Authentication(username, password) {
+export function User_Authentication(username, password) {
   if (users[username] && users[username].password === password) {
     console.log("Authentication successful");
     return true;
@@ -67,4 +67,3 @@ function User_Authentication(username, password) {
 Lend_Book("The Art of being Alone", "user1", "2022-01-01");
 
 View_Borrowed_Books("user1");
-
